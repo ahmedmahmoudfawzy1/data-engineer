@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.title">Data Engineering Diploma | EraaSoft</title>
+  <meta name="description" data-i18n-attr="content:meta.desc" content="EraaSoft Data Engineering Diploma: 150 training hours over 25 weeks plus 60 hours of project work, built for complete beginners. Learn Python, SQL Server, SSIS, Spark on Databricks, Airflow and Power BI by building real batch data pipelines.">
+  <meta name="theme-color" content="#0B1626">
+  <link rel="icon" href="assets/logos/eraasoft-logo.webp" type="image/webp">
+
+  <!-- Apply the saved language before first paint (avoids a flash of English) -->
+  <script>
+    (function () {
+      var d = document.documentElement, l = null;
+      d.classList.add('js');
+      try { l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('eraasoft-lang'); } catch (e) {}
+      if (l === 'ar') { d.lang = 'ar'; d.dir = 'rtl'; d.classList.add('i18n-pending'); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (browser CDN build) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <div class="container flex items-center justify-between gap-6 h-16 md:h-[72px]">
+      <a href="#top" class="shrink-0" aria-label="EraaSoft home" data-i18n-attr="aria-label:a11y.home">
+        <img src="assets/logos/eraasoft-logo.webp" alt="EraaSoft" width="142" height="48" class="brand-logo">
+      </a>
+
+      <nav class="hidden lg:block" aria-label="Primary" data-i18n-attr="aria-label:a11y.primaryNav">
+        <ul class="nav-links flex items-center gap-7">
+          <li><a href="#overview" data-i18n="nav.overview">Overview</a></li>
+          <li><a href="#curriculum" data-i18n="nav.curriculum">Curriculum</a></li>
+          <li><a href="#tools" data-i18n="nav.tools">Tools</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#capstone" data-i18n="nav.capstone">Capstone</a></li>
+          <li><a href="#assessment" data-i18n="nav.assessment">Assessment</a></li>
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Language switch: label shows the language you switch TO -->
+        <button type="button" class="lang-toggle" id="lang-toggle" lang="ar" aria-label="التبديل إلى العربية">العربية</button>
+        <a href="#register" class="btn btn-primary btn-sm header-cta" data-i18n="cta.register">Register Now</a>
+        <button class="menu-toggle lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="mobile-menu lg:hidden" aria-label="Mobile" data-i18n-attr="aria-label:a11y.mobileNav">
+      <ul class="container">
+        <li><a href="#overview" data-i18n="nav.overview">Overview</a></li>
+        <li><a href="#curriculum" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="#tools" data-i18n="nav.tools">Tools</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#capstone" data-i18n="nav.capstone">Capstone</a></li>
+        <li><a href="#outcomes" data-i18n="nav.outcomes">Outcomes</a></li>
+        <li><a href="#assessment" data-i18n="nav.assessment">Assessment</a></li>
+        <li><a href="#requirements" data-i18n="nav.requirements">Requirements</a></li>
+        <li class="pt-3"><a href="#register" class="btn btn-primary w-full justify-center" data-i18n="cta.register">Register Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container relative grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center py-16 md:py-24 lg:py-28">
+        <div>
+          <p class="eyebrow eyebrow-light hero-in" style="--d:0ms" data-i18n="hero.eyebrow">EraaSoft &middot; Data Engineering Diploma</p>
+          <h1 id="hero-title" class="hero-title hero-in" style="--d:80ms" data-i18n="hero.title">From zero code to <span class="text-accent">end-to-end</span> data pipelines.</h1>
+          <p class="hero-lead hero-in" style="--d:160ms" data-i18n="hero.lead">150 training hours plus 60 hours of project work, built for complete beginners. You learn to build, schedule and document batch data pipelines, from source systems all the way to a BI dashboard, using Python, SQL Server, SSIS, Spark on Databricks, Apache Airflow and Power BI.</p>
+
+          <div class="flex flex-wrap gap-3 mt-8 hero-in" style="--d:240ms">
+            <a href="#register" class="btn btn-primary btn-lg" data-i18n="cta.register">Register Now</a>
+            <a href="#curriculum" class="btn btn-ghost-light btn-lg" data-i18n="hero.cta2">See the curriculum</a>
+          </div>
+
+          <dl class="hero-facts hero-in" style="--d:320ms">
+            <div><dt data-i18n="hero.fact.hours">Training hours</dt><dd>150</dd></div>
+            <div><dt data-i18n="hero.fact.projectHours">Project hours</dt><dd class="text-accent"><bdi>+60</bdi></dd></div>
+            <div><dt data-i18n="hero.fact.weeks">Weeks</dt><dd>25</dd></div>
+            <div><dt data-i18n="hero.fact.projects">Projects</dt><dd><bdi>5 + 1</bdi></dd></div>
+          </dl>
+        </div>
+
+        <!-- Pipeline map: mirrors the capstone reference architecture -->
+        <div class="pipeline-card hero-in" style="--d:200ms" aria-label="What you learn to build: a pipeline from sources to dashboard" data-i18n-attr="aria-label:pipe.aria">
+          <div class="pipeline-head" dir="ltr">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="pipeline-title">daily_pipeline</span>
+          </div>
+          <ol class="pipeline">
+            <li class="stage">
+              <span class="stage-key" data-i18n="pipe.k1">01 Sources</span>
+              <span class="stage-val" data-i18n="pipe.v1">Orders DB &middot; CSV drops &middot; REST API</span>
+            </li>
+            <li class="stage">
+              <span class="stage-key" data-i18n="pipe.k2">02 Ingest</span>
+              <span class="stage-val">Python &middot; SSIS &middot; PySpark</span>
+            </li>
+            <li class="stage">
+              <span class="stage-key" data-i18n="pipe.k3">03 Store</span>
+              <span class="stage-val">SQL Server DW &middot; Delta Lake</span>
+            </li>
+            <li class="stage">
+              <span class="stage-key" data-i18n="pipe.k4">04 Orchestrate</span>
+              <span class="stage-val">Apache Airflow</span>
+            </li>
+            <li class="stage stage-last">
+              <span class="stage-key" data-i18n="pipe.k5">05 Serve</span>
+              <span class="stage-val" data-i18n="pipe.v5">Power BI dashboard</span>
+            </li>
+          </ol>
+          <p class="pipeline-foot" data-i18n="pipe.foot">Every layer here is something you build during the diploma.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. COURSE OVERVIEW ============ -->
+    <section id="overview" class="section" aria-labelledby="overview-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="ov.eyebrow">01 / Overview</p>
+          <h2 id="overview-title" class="section-title" data-i18n="ov.title">The diploma in numbers</h2>
+          <p class="section-lead" data-i18n="ov.lead">25 weeks, 6 training hours a week, split evenly between theory and guided hands-on labs. On top of that, you build real projects on your own time.</p>
+        </header>
+
+        <!-- Core message: 150 h inside the diploma + 60 h of projects outside it -->
+        <div class="commit reveal">
+          <div class="commit-card commit-in">
+            <span class="commit-tag" data-i18n="ov.in.tag">Inside the diploma</span>
+            <span class="commit-num"><span data-count="150">150</span><small data-i18n="ov.hoursUnit">hours</small></span>
+            <span class="commit-title" data-i18n="ov.in.title">Training hours</span>
+            <div class="split-bar" aria-hidden="true"><span></span><span></span></div>
+            <div class="split">
+              <div><i class="sw sw-theory"></i><span class="split-num" data-count="75">75</span><span class="stat-label" data-i18n="ov.s.theory">Theory hours</span></div>
+              <div><i class="sw sw-lab"></i><span class="split-num" data-count="75">75</span><span class="stat-label" data-i18n="ov.s.lab">Hands-on lab hours</span></div>
+            </div>
+          </div>
+
+          <div class="commit-plus" aria-hidden="true">+</div>
+
+          <div class="commit-card commit-out">
+            <span class="commit-tag" data-i18n="ov.out.tag">Outside the diploma</span>
+            <span class="commit-num"><span data-count="60">60</span><small data-i18n="ov.hoursUnit">hours</small></span>
+            <span class="commit-title" data-i18n="ov.out.title">Project hours</span>
+            <p class="commit-desc" data-i18n="ov.out.desc">Not part of the 150 training hours. This is the time you spend building 5 mini-projects and your graduation capstone.</p>
+          </div>
+        </div>
+        <p class="commit-total reveal" data-i18n="ov.total">Total commitment: about <strong>210 hours</strong> over 25 weeks.</p>
+
+        <div class="stats-grid reveal">
+          <div class="stat"><span class="stat-num" data-count="25">25</span><span class="stat-label" data-i18n="ov.s.weeks">Weeks</span></div>
+          <div class="stat"><span class="stat-num" data-count="6">6</span><span class="stat-label" data-i18n="ov.s.perWeek">Training hours per week</span></div>
+          <div class="stat"><span class="stat-num" data-count="5">5</span><span class="stat-label" data-i18n="ov.s.mini">Mini-projects</span></div>
+          <div class="stat"><span class="stat-num" data-count="1">1</span><span class="stat-label" data-i18n="ov.s.capstone">Graduation capstone</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. WHAT YOU WILL LEARN ============ -->
+    <section id="curriculum" class="section section-alt" aria-labelledby="curriculum-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="cur.eyebrow">02 / Curriculum</p>
+          <h2 id="curriculum-title" class="section-title" data-i18n="cur.title">8 modules, one connected stack</h2>
+          <p class="section-lead" data-i18n="cur.lead">Each module builds on the last. You start in the terminal and finish with a dashboard sitting on top of your own warehouse and lakehouse.</p>
+        </header>
+
+        <ol class="phases">
+          <li class="phase reveal">
+            <div class="phase-num">01</div>
+            <div class="phase-body">
+              <div class="phase-meta"><span data-i18n="p1.weeks">Weeks 1–2</span></div>
+              <h3 class="phase-title" data-i18n="p1.title">Foundations: DE Concepts, CLI &amp; Git</h3>
+              <p class="phase-topics" data-i18n="p1.topics">The data engineering role and lifecycle, ETL vs ELT, OLTP vs OLAP, the Linux/WSL command line, Git and GitHub collaboration, and file formats (CSV, JSON, Parquet).</p>
+              <p class="phase-outcome"><span class="po-label" data-i18n="ph.byEnd">By the end</span><span data-i18n="p1.out">Work in a Linux shell, use Git/GitHub with pull requests, and explain the data lifecycle.</span></p>
+              <ul class="chips"><li>WSL2</li><li>Git</li><li>GitHub</li><li>VS Code</li></ul>
+            </div>
+          </li>
+
+          <li class="phase reveal">
+            <div class="phase-num">02</div>
+            <div class="phase-body">
+              <div class="phase-meta"><span data-i18n="p2.weeks">Weeks 3–7</span><span class="tag-project" data-i18n="tag.m1">Mini-Project 1</span></div>
+              <h3 class="phase-title" data-i18n="p2.title">Python for Data Engineering</h3>
+              <p class="phase-topics" data-i18n="p2.topics">Syntax and data structures, functions, files, errors and logging, packages and venv, OOP and clean code, pandas, APIs and pytest.</p>
+              <p class="phase-outcome"><span class="po-label" data-i18n="ph.byEnd">By the end</span><span data-i18n="p2.out">Write tested, logged Python scripts that extract from an API, transform with pandas and save Parquet.</span></p>
+              <ul class="chips"><li>Python</li><li>pandas</li><li>pytest</li><li>requests</li></ul>
+            </div>
+          </li>
+
+          <li class="phase reveal">
+            <div class="phase-num">03</div>
+            <div class="phase-body">
+              <div class="phase-meta"><span data-i18n="p3.weeks">Weeks 7–11</span><span class="tag-project" data-i18n="tag.m2">Mini-Project 2</span></div>
+              <h3 class="phase-title" data-i18n="p3.title">SQL &amp; Relational Databases (T-SQL)</h3>
+              <p class="phase-topics" data-i18n="p3.topics">SELECT, filtering, joins, aggregation, subqueries, CTEs, window functions, DDL/DML, transactions, indexes and stored procedures.</p>
+              <p class="phase-outcome"><span class="po-label" data-i18n="ph.byEnd">By the end</span><span data-i18n="p3.out">Write complex analytical T-SQL, create schemas and read execution plans.</span></p>
+              <ul class="chips"><li>SQL Server</li><li>SSMS</li></ul>
+            </div>
+          </li>
+
+          <li class="phase reveal">
+            <div class="phase-num">04</div>
+            <div class="phase-body">
+              <div class="phase-meta"><span data-i18n="p4.weeks">Weeks 11–13</span><span class="tag-project" data-i18n="tag.cap1">Capstone Milestone 1</span></div>
+              <h3 class="phase-title" data-i18n="p4.title">Data Modeling &amp; Warehousing</h3>
+              <p class="phase-topics" data-i18n="p4.topics">Normalisation, ER modeling, dimensional modeling, star schema, SCD types, fact types, warehouse layers, and DW vs lake vs lakehouse.</p>
+              <p class="phase-outcome"><span class="po-label" data-i18n="ph.byEnd">By the end</span><span data-i18n="p4.out">Design a star schema from business questions and document source-to-target mappings.</span></p>
+              <ul class="chips"><li>SQL Server</li><li>draw.io</li></ul>
+            </div>
+          </li>
+
+          <li class="phase reveal">
+            <div class="phase-num">05</div>
+            <div class="phase-body">
+              <div class="phase-meta"><span data-i18n="p5.weeks">Weeks 13–15</span><span class="tag-project" data-i18n="tag.m3">Mini-Project 3</span></div>
+              <h3 class="phase-title" data-i18n="p5.title">ETL with SSIS</h3>
+              <p class="phase-topics" data-i18n="p5.topics">SSIS architecture, data flow transformations, control flow, variables and parameters, dimension and fact loading, incremental loads, deployment and scheduling.</p>
+              <p class="phase-outcome"><span class="po-label" data-i18n="ph.byEnd">By the end</span><span data-i18n="p5.out">Build, deploy and schedule SSIS packages that load a dimensional warehouse incrementally.</span></p>
+              <ul class="chips"><li>Visual Studio</li><li>SSIS</li><li>SQL Server Agent</li></ul>
+            </div>
+          </li>
+
+          <li class="phase reveal">
+            <div class="phase-num">06</div>
+            <div class="phase-body">
+              <div class="phase-meta"><span data-i18n="p6.weeks">Weeks 16–20</span><span class="tag-project" data-i18n="tag.m4">Mini-Project 4</span></div>
+              <h3 class="phase-title" data-i18n="p6.title">Spark &amp; Databricks Lakehouse</h3>
+              <p class="phase-topics" data-i18n="p6.topics">Spark architecture, DataFrames, Spark SQL, performance basics, Delta Lake, MERGE, the medallion architecture, Unity Catalog, Jobs and data quality.</p>
+              <p class="phase-outcome"><span class="po-label" data-i18n="ph.byEnd">By the end</span><span data-i18n="p6.out">Build and schedule a bronze/silver/gold Delta pipeline with quality checks.</span></p>
+              <ul class="chips"><li>PySpark</li><li>Delta Lake</li><li>Databricks</li></ul>
+            </div>
+          </li>
+
+          <li class="phase reveal">
+            <div class="phase-num">07</div>
+            <div class="phase-body">
+              <div class="phase-meta"><span data-i18n="p7.weeks">Weeks 21–23</span><span class="tag-project" data-i18n="tag.m5">Mini-Project 5</span></div>
+              <h3 class="phase-title" data-i18n="p7.title">Orchestration with Apache Airflow</h3>
+              <p class="phase-topics" data-i18n="p7.topics">Orchestration concepts, DAGs, operators, TaskFlow, scheduling, retries, sensors, Databricks integration, and monitoring and testing DAGs.</p>
+              <p class="phase-outcome"><span class="po-label" data-i18n="ph.byEnd">By the end</span><span data-i18n="p7.out">Orchestrate Python, Databricks and SQL Server tasks with reliable, tested DAGs.</span></p>
+              <ul class="chips"><li>Apache Airflow</li><li>WSL2</li></ul>
+            </div>
+          </li>
+
+          <li class="phase reveal">
+            <div class="phase-num">08</div>
+            <div class="phase-body">
+              <div class="phase-meta"><span data-i18n="p8.weeks">Weeks 23–25</span><span class="tag-project" data-i18n="tag.capDash">Capstone dashboard</span></div>
+              <h3 class="phase-title" data-i18n="p8.title">Business Intelligence (Power BI)</h3>
+              <p class="phase-topics" data-i18n="p8.topics">BI concepts, Power Query, semantic modeling, DAX, dashboard design, publishing, row-level security and performance.</p>
+              <p class="phase-outcome"><span class="po-label" data-i18n="ph.byEnd">By the end</span><span data-i18n="p8.out">Build a modeled, secured, interactive dashboard on top of the warehouse and the lakehouse.</span></p>
+              <ul class="chips"><li>Power BI Desktop</li></ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 4. TOOLS & TECHNOLOGIES ============ -->
+    <!--
+      Tool logos: each .tool-mark shows a text monogram by default.
+      To show a real logo, put the file in assets/images/tools/ and set data-logo,
+      e.g. data-logo="assets/images/tools/python.svg". See README.md.
+      Tool names are product names and are not translated.
+    -->
+    <section id="tools" class="section" aria-labelledby="tools-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="tools.eyebrow">03 / Tools &amp; Technologies</p>
+          <h2 id="tools-title" class="section-title" data-i18n="tools.title">The stack you will work with</h2>
+          <p class="section-lead" data-i18n="tools.lead">Grouped by where each tool sits in a data platform. All of them are free for learning.</p>
+        </header>
+
+        <div class="tool-groups">
+          <article class="tool-group tool-group-wide reveal">
+            <header><span class="tg-index">A</span><h3 data-i18n="tools.gA">Programming &amp; data processing</h3></header>
+            <ul class="tools">
+              <li class="tool"><span class="tool-mark" data-logo="">Py</span><span class="tool-name">Python 3.12</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">pd</span><span class="tool-name">pandas</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">PA</span><span class="tool-name">PyArrow</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">Rq</span><span class="tool-name">requests</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">SA</span><span class="tool-name">SQLAlchemy</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">pt</span><span class="tool-name">pytest</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">Rf</span><span class="tool-name">Ruff</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">Bk</span><span class="tool-name">Black</span></li>
+            </ul>
+          </article>
+
+          <article class="tool-group reveal">
+            <header><span class="tg-index">B</span><h3 data-i18n="tools.gB">Databases &amp; warehousing</h3></header>
+            <ul class="tools">
+              <li class="tool"><span class="tool-mark" data-logo="">SQL</span><span class="tool-name">SQL Server</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">T</span><span class="tool-name">T-SQL</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">SM</span><span class="tool-name">SSMS</span></li>
+            </ul>
+          </article>
+
+          <article class="tool-group reveal">
+            <header><span class="tg-index">C</span><h3 data-i18n="tools.gC">ETL &amp; scheduling</h3></header>
+            <ul class="tools">
+              <li class="tool"><span class="tool-mark" data-logo="">IS</span><span class="tool-name">SSIS</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">VS</span><span class="tool-name">Visual Studio</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">Ag</span><span class="tool-name">SQL Server Agent</span></li>
+            </ul>
+          </article>
+
+          <article class="tool-group reveal">
+            <header><span class="tg-index">D</span><h3 data-i18n="tools.gD">Big data &amp; lakehouse</h3></header>
+            <ul class="tools">
+              <li class="tool"><span class="tool-mark" data-logo="">Sp</span><span class="tool-name">Apache Spark</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">PS</span><span class="tool-name">PySpark</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">Δ</span><span class="tool-name">Delta Lake</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">Db</span><span class="tool-name">Databricks</span></li>
+            </ul>
+          </article>
+
+          <article class="tool-group reveal">
+            <header><span class="tg-index">E</span><h3 data-i18n="tools.gE">Orchestration</h3></header>
+            <ul class="tools">
+              <li class="tool"><span class="tool-mark" data-logo="">Af</span><span class="tool-name">Apache Airflow</span></li>
+            </ul>
+          </article>
+
+          <article class="tool-group reveal">
+            <header><span class="tg-index">F</span><h3 data-i18n="tools.gF">Business intelligence</h3></header>
+            <ul class="tools">
+              <li class="tool"><span class="tool-mark" data-logo="">BI</span><span class="tool-name">Power BI</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">PQ</span><span class="tool-name">Power Query</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">DX</span><span class="tool-name">DAX</span></li>
+            </ul>
+          </article>
+
+          <article class="tool-group tool-group-wide reveal">
+            <header><span class="tg-index">G</span><h3 data-i18n="tools.gG">Engineering workflow</h3></header>
+            <ul class="tools">
+              <li class="tool"><span class="tool-mark" data-logo="">Git</span><span class="tool-name">Git</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">GH</span><span class="tool-name">GitHub</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">VC</span><span class="tool-name">VS Code</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">WSL</span><span class="tool-name">WSL2</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">Ub</span><span class="tool-name">Ubuntu</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">Jn</span><span class="tool-name">Jupyter</span></li>
+              <li class="tool"><span class="tool-mark" data-logo="">dio</span><span class="tool-name">draw.io</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. HANDS-ON PROJECTS ============ -->
+    <!--
+      Project visuals: each .project-media shows a built-in flow diagram by default.
+      To use an image instead, set data-img, e.g. data-img="assets/images/projects/m1.webp".
+    -->
+    <section id="projects" class="section section-alt" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="projects-head">
+          <header class="section-head reveal">
+            <p class="eyebrow" data-i18n="pr.eyebrow">04 / Hands-on Projects</p>
+            <h2 id="projects-title" class="section-title" data-i18n="pr.title">Six projects you build and keep</h2>
+            <p class="section-lead" data-i18n="pr.lead">Every mini-project is based on a real business scenario, and every one lives in your own GitHub repository. The capstone brings them all together.</p>
+          </header>
+          <div class="pcount reveal">
+            <div class="pcount-item"><b>5</b><span data-i18n="pr.count.mini">Mini-<br>projects</span></div>
+            <span class="pcount-plus" aria-hidden="true">+</span>
+            <div class="pcount-item pcount-cap"><b>1</b><span data-i18n="pr.count.cap">Graduation<br>capstone</span></div>
+            <p class="pcount-note" data-i18n="pr.count.note">About 60 hours of project work, outside the 150 training hours.</p>
+          </div>
+        </div>
+
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project-media" data-img="" data-alt="API-to-Parquet ETL project visual">
+              <div class="flow" aria-hidden="true"><span>Open-Meteo API</span><span>pandas</span><span>Parquet</span></div>
+            </div>
+            <div class="project-body">
+              <div class="project-id"><span class="pid-badge">M1</span><span data-i18n="m1.label">Mini-project 1 of 5</span></div>
+              <h3 data-i18n="m1.title">API-to-Parquet ETL</h3>
+              <p data-i18n="m1.desc">A city mobility start-up wants daily weather data to study how weather affects trips. You extract hourly weather for 5+ cities from the Open-Meteo API, clean it with pandas and save a partitioned Parquet dataset, with logging and pytest tests.</p>
+              <ul class="chips chips-sm"><li>Python</li><li>pandas</li><li>requests</li><li>pytest</li><li>Git</li></ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-media" data-img="" data-alt="SQL analytics case study project visual">
+              <div class="flow" aria-hidden="true" data-i18n="m2.flow"><span>AdventureWorks</span><span>T-SQL</span><span>Insights</span></div>
+            </div>
+            <div class="project-body">
+              <div class="project-id"><span class="pid-badge">M2</span><span data-i18n="m2.label">Mini-project 2 of 5</span></div>
+              <h3 data-i18n="m2.title">SQL Analytics Case Study</h3>
+              <p data-i18n="m2.desc">A bike retailer's management needs answers to 10 business questions. You answer them from the AdventureWorks database with joins, CTEs and window functions, build reporting views and a stored procedure, and optimise slow queries.</p>
+              <ul class="chips chips-sm"><li>SQL Server</li><li>SSMS</li><li>Git</li></ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-media" data-img="" data-alt="Warehouse load with SSIS project visual">
+              <div class="flow" aria-hidden="true" data-i18n="m3.flow"><span>CSV files</span><span>SSIS</span><span>Star schema</span></div>
+            </div>
+            <div class="project-body">
+              <div class="project-id"><span class="pid-badge">M3</span><span data-i18n="m3.label">Mini-project 3 of 5</span></div>
+              <h3 data-i18n="m3.title">Warehouse Load with SSIS</h3>
+              <p data-i18n="m3.desc">An online retailer needs its order data loaded nightly into a star-schema warehouse. You design the schema, load SCD1/SCD2 dimensions and a fact table incrementally, then deploy to SSISDB and schedule it with SQL Server Agent.</p>
+              <ul class="chips chips-sm"><li>SSIS</li><li>SQL Server</li><li>SSISDB</li></ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-media" data-img="" data-alt="Medallion lakehouse pipeline project visual">
+              <div class="flow flow-medallion" aria-hidden="true"><span>Bronze</span><span>Silver</span><span>Gold</span></div>
+            </div>
+            <div class="project-body">
+              <div class="project-id"><span class="pid-badge">M4</span><span data-i18n="m4.label">Mini-project 4 of 5</span></div>
+              <h3 data-i18n="m4.title">Medallion Lakehouse Pipeline</h3>
+              <p data-i18n="m4.desc">The same retailer wants a lakehouse version of its order data. You build bronze, silver and gold Delta tables on Databricks with idempotent MERGE loads, data-quality checks, and a scheduled multi-task job.</p>
+              <ul class="chips chips-sm"><li>PySpark</li><li>Delta Lake</li><li>Databricks Jobs</li></ul>
+            </div>
+          </article>
+
+          <article class="project project-wide reveal">
+            <div class="project-media" data-img="" data-alt="End-to-end scheduled pipeline with Airflow project visual">
+              <div class="flow flow-long" aria-hidden="true" data-i18n="m5.flow"><span>Extract</span><span>Databricks job</span><span>Quality gate</span><span>Notify</span></div>
+            </div>
+            <div class="project-body">
+              <div class="project-id"><span class="pid-badge">M5</span><span data-i18n="m5.label">Mini-project 5 of 5</span></div>
+              <h3 data-i18n="m5.title">End-to-End Scheduled Pipeline with Airflow</h3>
+              <p data-i18n="m5.desc">The retailer wants one scheduler to run extraction, transformation and validation every day. You build a DAG that runs a Python extract, triggers the Databricks job, applies a data-quality gate and sends a notification, with retries, sensors, tests and a runbook.</p>
+              <ul class="chips chips-sm"><li>Apache Airflow</li><li>Databricks provider</li><li>pytest</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="cta-strip reveal">
+          <p data-i18n="pr.cta"><strong>Five portfolio projects and a capstone,</strong> all built on the tools listed above.</p>
+          <a href="#register" class="btn btn-primary" data-i18n="cta.register">Register Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. GRADUATION CAPSTONE ============ -->
+    <section id="capstone" class="section section-dark" aria-labelledby="capstone-title">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container relative">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow-light" data-i18n="cap.eyebrow">05 / Graduation Capstone</p>
+          <h2 id="capstone-title" class="section-title text-white" data-i18n="cap.title">Retail Analytics Platform</h2>
+          <p class="section-lead section-lead-light" data-i18n="cap.lead">A mid-sized online retailer needs a reliable analytics platform: a relational data warehouse for finance reporting, a lakehouse for analytics and data science, daily orchestration and a management dashboard. The capstone brings every tool from the diploma into one solution that you design, justify and present.</p>
+        </header>
+
+        <!-- Architecture diagram (built from the Capstone Plan reference architecture).
+             To use an image instead, place it in assets/images/capstone/ and set data-img on .arch-media. -->
+        <div class="arch-media reveal" data-img="" data-alt="Capstone reference architecture">
+          <div class="arch" role="img" aria-label="Capstone architecture: sources feed a SQL Server warehouse through SSIS and a Databricks lakehouse through PySpark; Airflow orchestrates; Power BI serves both." data-i18n-attr="aria-label:arch.aria">
+            <div class="arch-orch">
+              <span class="arch-k" data-i18n="arch.orch.k">Orchestration &middot; Apache Airflow</span>
+              <span class="arch-v" data-i18n="arch.orch.v">Daily DAG: extract &rarr; trigger Databricks &rarr; quality gate &rarr; notify</span>
+            </div>
+
+            <div class="arch-cols">
+              <div class="arch-col">
+                <span class="arch-k" data-i18n="arch.sources">Sources</span>
+                <div class="arch-node">Orders DB <small>SQL Server</small></div>
+                <div class="arch-node" data-i18n="arch.csv">Daily CSV drops</div>
+                <div class="arch-node" data-i18n="arch.api">Weather REST API <small>Open-Meteo</small></div>
+              </div>
+
+              <div class="arch-col arch-tracks">
+                <div class="arch-track">
+                  <span class="arch-k" data-i18n="arch.trackA">Track A &middot; Relational data warehouse</span>
+                  <div class="arch-row">
+                    <div class="arch-node" data-i18n="arch.ssis">SSIS <small>staging &middot; incremental</small></div>
+                    <div class="arch-node arch-node-strong">SQL Server star schema <small>dim_customer (SCD2) &middot; dim_product &middot; dim_date &middot; fact_orders</small></div>
+                  </div>
+                </div>
+
+                <div class="arch-recon" data-i18n="arch.recon">Data quality &amp; reconciliation: warehouse vs lakehouse totals</div>
+
+                <div class="arch-track">
+                  <span class="arch-k" data-i18n="arch.trackB">Track B &middot; Databricks lakehouse</span>
+                  <div class="arch-row arch-medallion">
+                    <div class="arch-node m-bronze" data-i18n="arch.bronze">Bronze <small>raw &middot; append-only</small></div>
+                    <div class="arch-node m-silver" data-i18n="arch.silver">Silver <small>cleansed &middot; deduplicated</small></div>
+                    <div class="arch-node m-gold" data-i18n="arch.gold">Gold <small>business marts</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="arch-col">
+                <span class="arch-k" data-i18n="arch.serving">Serving</span>
+                <div class="arch-node arch-node-strong" data-i18n="arch.pbi">Power BI dashboard <small>semantic model &middot; DAX &middot; RLS</small></div>
+              </div>
+            </div>
+
+            <div class="arch-base">
+              <span class="arch-k" data-i18n="arch.base.k">Engineering practice</span>
+              <span class="arch-v" data-i18n="arch.base.v">Git/GitHub &middot; pytest &middot; README &middot; runbook &middot; data dictionary</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 mt-14">
+          <div class="reveal">
+            <h3 class="sub-title text-white" data-i18n="cap.coversTitle">What the capstone covers</h3>
+            <ul class="cap-list">
+              <li data-i18n="cap.c1">Relational data warehouse in SQL Server, loaded by SSIS with SCD2 and incremental loads</li>
+              <li data-i18n="cap.c2">Databricks lakehouse with bronze, silver and gold layers and idempotent MERGE</li>
+              <li data-i18n="cap.c3">Data-quality checks, quarantine, and reconciliation between warehouse and lakehouse</li>
+              <li data-i18n="cap.c4">Apache Airflow DAG with retries, sensors and branching, plus tests</li>
+              <li data-i18n="cap.c5">Power BI dashboard over the warehouse and gold tables, with row-level security</li>
+              <li data-i18n="cap.c6">GitHub repository with README, architecture diagram, source-to-target mapping, runbook and data dictionary</li>
+              <li data-i18n="cap.c7">Final 15-minute demo followed by Q&amp;A</li>
+            </ul>
+          </div>
+
+          <div class="reveal">
+            <h3 class="sub-title text-white" data-i18n="cap.msTitle">Seven milestones</h3>
+            <ol class="milestones">
+              <li><span class="ms-n">1</span><span class="ms-t" data-i18n="ms.1">Proposal &amp; architecture</span><span class="ms-d" data-i18n="ms.d1">After week 13</span></li>
+              <li><span class="ms-n">2</span><span class="ms-t" data-i18n="ms.2">Relational DW with SSIS</span><span class="ms-d" data-i18n="ms.d2">After week 15</span></li>
+              <li><span class="ms-n">3</span><span class="ms-t" data-i18n="ms.3">Lakehouse on Databricks</span><span class="ms-d" data-i18n="ms.d3">After week 20</span></li>
+              <li><span class="ms-n">4</span><span class="ms-t" data-i18n="ms.4">Orchestration with Airflow</span><span class="ms-d" data-i18n="ms.d4">After week 23</span></li>
+              <li><span class="ms-n">5</span><span class="ms-t" data-i18n="ms.5">Power BI dashboard</span><span class="ms-d" data-i18n="ms.d5">After week 25</span></li>
+              <li><span class="ms-n">6</span><span class="ms-t" data-i18n="ms.6">Testing, documentation &amp; polish</span><span class="ms-d" data-i18n="ms.d6">1 week after the diploma</span></li>
+              <li><span class="ms-n">7</span><span class="ms-t" data-i18n="ms.7">Final demo</span><span class="ms-d" data-i18n="ms.d7">2 weeks after the diploma</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. LEARNING OUTCOMES ============ -->
+    <section id="outcomes" class="section" aria-labelledby="outcomes-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="out.eyebrow">06 / Learning Outcomes</p>
+          <h2 id="outcomes-title" class="section-title" data-i18n="out.title">What you will be able to do</h2>
+          <p class="section-lead" data-i18n="out.lead">Each skill is taught in a specific module and assessed in a quiz or project. The level shows the target depth.</p>
+        </header>
+
+        <div class="level-key reveal" aria-label="Level key" data-i18n-attr="aria-label:lvl.keyAria">
+          <span><i class="lv lv-strong"></i><span data-i18n="lvl.strong">Strong</span></span>
+          <span><i class="lv lv-working"></i><span data-i18n="lvl.working">Working</span></span>
+          <span><i class="lv lv-found"></i><span data-i18n="lvl.found">Foundational</span></span>
+        </div>
+
+        <ul class="outcomes reveal">
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.1">Use the Linux shell, Git and GitHub in a team workflow</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.2">Write clean, tested, logged Python for ETL tasks</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.3">Extract data from REST APIs and files</span></li>
+          <li class="outcome"><span class="lvl lvl-strong" data-i18n="lvl.strong">Strong</span><span data-i18n="o.4">Write complex analytical T-SQL: joins, CTEs, window functions</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.5">Create schemas, constraints and stored procedures</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.6">Design normalised and dimensional (star) models</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.7">Implement SCD Type 1/2 and incremental loads</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.8">Build, deploy and schedule SSIS packages</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.9">Process data with PySpark and Spark SQL</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.10">Build Delta Lake medallion pipelines with MERGE</span></li>
+          <li class="outcome"><span class="lvl lvl-found" data-i18n="lvl.found">Foundational</span><span data-i18n="o.11">Use Databricks Jobs and Unity Catalog basics</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.12">Implement data-quality checks and tests</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.13">Orchestrate pipelines with Airflow: retries, sensors, tests</span></li>
+          <li class="outcome"><span class="lvl lvl-found" data-i18n="lvl.found">Foundational</span><span data-i18n="o.14">Integrate Databricks and SQL Server tasks in Airflow</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.15">Model data in Power BI and write DAX measures</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.16">Design and secure dashboards (RLS, performance)</span></li>
+          <li class="outcome"><span class="lvl lvl-working" data-i18n="lvl.working">Working</span><span data-i18n="o.17">Document, present and defend a data platform design</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 8. ASSESSMENT ============ -->
+    <section id="assessment" class="section section-alt" aria-labelledby="assessment-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="as.eyebrow">07 / Assessment</p>
+          <h2 id="assessment-title" class="section-title" data-i18n="as.title">How you are evaluated</h2>
+          <p class="section-lead" data-i18n="as.lead">70% of your grade comes from what you build: the mini-projects and the capstone.</p>
+        </header>
+
+        <div class="assess reveal">
+          <div class="donut" role="img" aria-label="Module quizzes 15%, Lab completion and homework 15%, Mini-projects 30%, Capstone project 40%" data-i18n-attr="aria-label:as.donutAria">
+            <div class="donut-center"><span>100%</span><small data-i18n="as.final">Final score</small></div>
+          </div>
+
+          <ul class="assess-list">
+            <li style="--c:var(--c-q)">
+              <span class="a-pct">15%</span>
+              <div><h3 data-i18n="as.q.t">Module quizzes</h3><p data-i18n="as.q.d">Concept checks at the end of each of the 8 modules.</p></div>
+            </li>
+            <li style="--c:var(--c-l)">
+              <span class="a-pct">15%</span>
+              <div><h3 data-i18n="as.l.t">Lab completion &amp; homework</h3><p data-i18n="as.l.d">Weekly labs and homework, submitted through Git.</p></div>
+            </li>
+            <li style="--c:var(--c-m)">
+              <span class="a-pct">30%</span>
+              <div><h3 data-i18n="as.m.t">Mini-projects</h3><p data-i18n="as.m.d">Five projects, equal weight each.</p></div>
+            </li>
+            <li style="--c:var(--c-c)">
+              <span class="a-pct">40%</span>
+              <div><h3 data-i18n="as.c.t">Capstone project</h3><p data-i18n="as.c.d">Repository, live demo and Q&amp;A.</p></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bands reveal" aria-label="Grade bands" data-i18n-attr="aria-label:as.bands">
+          <span class="bands-label" data-i18n="as.bands">Grade bands</span>
+          <span class="band" data-i18n="as.b1"><b>Distinction</b> 85%+</span>
+          <span class="band" data-i18n="as.b2"><b>Merit</b> 70%+</span>
+          <span class="band" data-i18n="as.b3"><b>Pass</b> 60%+</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. REQUIREMENTS ============ -->
+    <section id="requirements" class="section section-tight" aria-labelledby="requirements-title">
+      <div class="container">
+        <div class="req reveal">
+          <div>
+            <p class="eyebrow" data-i18n="rq.eyebrow">08 / Requirements</p>
+            <h2 id="requirements-title" class="section-title" data-i18n="rq.title">What you need to start</h2>
+            <p class="section-lead" data-i18n="rq.lead">No programming background needed. SSIS and Power BI Desktop run on Windows only, so a Windows laptop is required.</p>
+          </div>
+          <ul class="req-list">
+            <li><span class="req-k" data-i18n="rq.k1">Background</span><span class="req-v" data-i18n="rq.v1">Complete beginner, no programming experience</span></li>
+            <li><span class="req-k" data-i18n="rq.k2">Laptop</span><span class="req-v">Windows 10/11</span></li>
+            <li><span class="req-k" data-i18n="rq.k3">Memory</span><span class="req-v" data-i18n="rq.v3">16 GB RAM recommended &middot; 8 GB minimum</span></li>
+            <li><span class="req-k" data-i18n="rq.k4">Storage</span><span class="req-v" data-i18n="rq.v4">50 GB free disk space</span></li>
+            <li><span class="req-k" data-i18n="rq.k5">Connection</span><span class="req-v" data-i18n="rq.v5">Stable internet</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10. ENGINEERS SYNDICATE ============ -->
+    <!--
+      PENDING CONTENT: this section must reproduce the Engineers Syndicate section from the
+      reference landing page URL. The URL was not provided, so no content has been written here
+      (nothing is invented). Replace the placeholder block below with the real text once available,
+      and add the Arabic version under the same keys in js/i18n-ar.js.
+    -->
+    <section id="syndicate" class="section section-alt" aria-labelledby="syndicate-title">
+      <div class="container">
+        <div class="syndicate reveal">
+          <div class="syndicate-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10l16-6z"/><path d="M17 24l5 5 9-10"/></svg>
+          </div>
+          <div class="syndicate-body">
+            <p class="eyebrow" data-i18n="syn.eyebrow">09 / Engineers Syndicate</p>
+            <h2 id="syndicate-title" class="section-title" data-i18n="syn.title">Engineers Syndicate</h2>
+            <div class="placeholder-block" data-pending="engineers-syndicate" data-i18n="syn.pending">Content pending: add the Engineers Syndicate details from the reference page.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGISTRATION ============ -->
+    <section id="register" class="section section-dark register" aria-labelledby="register-title">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container relative grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
+        <div class="reveal">
+          <p class="eyebrow eyebrow-light" data-i18n="reg.eyebrow">Registration</p>
+          <h2 id="register-title" class="section-title text-white" data-i18n="reg.title">Reserve your place in the diploma</h2>
+          <p class="section-lead section-lead-light" data-i18n="reg.lead">Leave your details and the EraaSoft team will contact you about the next intake.</p>
+          <ul class="reg-points">
+            <li data-i18n="reg.p1">150 training hours over 25 weeks</li>
+            <li data-i18n="reg.p2">+60 hours of projects: 5 mini-projects and a graduation capstone</li>
+            <li data-i18n="reg.p3">Built for complete beginners</li>
+          </ul>
+        </div>
+
+        <form id="registration-form" class="reg-form reveal" novalidate>
+          <div class="field">
+            <label for="fullName" data-i18n="form.name">Full Name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Enter your full name" data-i18n-attr="placeholder:form.namePh" aria-describedby="fullName-error">
+            <p class="field-error" id="fullName-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="email" data-i18n="form.email">Email Address</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Enter your email address" data-i18n-attr="placeholder:form.emailPh" aria-describedby="email-error">
+            <p class="field-error" id="email-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="phone" data-i18n="form.phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Enter your phone number" data-i18n-attr="placeholder:form.phonePh" aria-describedby="phone-error">
+            <p class="field-error" id="phone-error" aria-live="polite"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-full justify-center" id="register-submit">
+            <span class="btn-label" data-i18n="cta.register">Register Now</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container flex flex-col sm:flex-row items-center justify-between gap-4 py-8">
+      <img src="assets/logos/eraasoft-logo.webp" alt="EraaSoft" width="142" height="48" class="brand-logo" loading="lazy">
+      <p class="text-sm">&copy; <span id="year"></span> EraaSoft. <span data-i18n="footer.diploma">Data Engineering Diploma.</span></p>
+      <a href="#top" class="footer-top" data-i18n="footer.top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky CTA (hidden while the form is on screen) -->
+  <div class="mobile-cta" id="mobile-cta">
+    <a href="#register" class="btn btn-primary w-full justify-center" data-i18n="cta.register">Register Now</a>
+  </div>
+
+  <script src="js/i18n-ar.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
